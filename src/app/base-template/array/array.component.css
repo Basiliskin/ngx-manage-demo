@@ -1,0 +1,15 @@
+.list {
+    background-color:#FFFFEE;
+    width: 200px;
+    height: 100px;
+}
+
+.list-group {
+    height: 100px;
+    overflow-y:scroll;
+    list-style-type:none;
+}
+
+.list-item {
+    width: 100px;
+}

@@ -1,0 +1,30 @@
+<td *ngIf="Value">
+    <label class="form-label">{{Value.name}}</label>
+</td>
+<td *ngIf="Value">
+    <div class="autocomplete" style="width:200px;">
+        <input 
+            [disabled]="disabled"
+            type="search" 
+            (keyup)="autocomplete($event)" 
+            (focus)="autocomplete($event)" 
+            (keydown)="autocomplete($event,true)"
+            (focusout)="focusout($event)"
+            [(ngModel)]="searchText"
+        >
+        <div *ngIf="quickSearchDiv" class="autocomplete-items">
+            <div *ngFor="let item of List">
+                <a 
+                    tabindex='-1'
+                    href='javascript:void(0);' 
+                    (mousedown)="dispSelection(item)"
+                    (mouseenter)="selectItem=item"
+                    (mouseleave)="selectItem=undefined"
+                    [class.selected]="selectItem===item"
+                    >
+                    {{item.value}}
+                </a>
+            </div>
+        </div>
+    </div>
+</td>

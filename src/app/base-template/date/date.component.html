@@ -1,0 +1,7 @@
+<td *ngIf="Value">
+    <label class="form-label">{{Value.name}}</label>
+</td>
+<td *ngIf="Value">
+    <div *ngIf="!type">{{Value.value | date:"MM/dd/yyyy"}}</div>
+    <input *ngIf="type" [type]="type" [disabled]="disabled" [(ngModel)]="Value.value"/>
+</td>

@@ -1,0 +1,7 @@
+<td>{{Value.name}}</td>
+<td>
+    <label class="form-checkbox">
+        <input type="checkbox" [disabled]="disabled || !type" [(ngModel)]="Value.value" class="form-input" />
+        <i class="form-icon"></i> 
+    </label>
+</td>

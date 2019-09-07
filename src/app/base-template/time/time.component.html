@@ -1,0 +1,23 @@
+<td *ngIf="Value">
+    <label class="form-label">{{Value.name}}</label>
+</td>
+<td *ngIf="Value">
+    <input 
+        type="number" 
+        [disabled]="disabled" 
+        [(ngModel)]="Value.value.hours"
+        (ngModelChange)="onChangeHour($event)"
+        size="2"
+        maxlength="2"
+        width="60px"        
+        /> : 
+      <input 
+        type="number"  
+        [disabled]="disabled" 
+        [(ngModel)]="Value.value.minutes"
+        (ngModelChange)="onChangeMinute($event)"
+        size="2"
+        maxlength="2"
+        width="60px"        
+        />
+</td>

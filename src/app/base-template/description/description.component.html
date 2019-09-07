@@ -1,0 +1,13 @@
+<td *ngIf="Value" valign="top">
+    <label class="form-label">{{Value.name}}</label>
+</td>
+<td *ngIf="Value">
+    <textarea 
+      style="background-color:black;color:white;" 
+      [(ngModel)]='Value.value' 
+      rows="5" cols="60"
+      [disabled]="disabled || !type" 
+    >
+
+    </textarea>
+</td>

@@ -1,0 +1,10 @@
+<div>
+    <ul class="tab tab-block">
+        <li class="tab-item active" *ngFor="let o of keys" [class.active]="Selected==o.index">
+            <a (click)="Selected=o.index">{{title(o.index)}}</a>
+        </li>
+    </ul>
+    <div *ngFor="let item of Value.value; let i = index">
+        <ngx-base *ngIf="Selected==i" [value]="Value.value[i]"  [owner]="Value.owner"></ngx-base>
+    </div>
+</div>

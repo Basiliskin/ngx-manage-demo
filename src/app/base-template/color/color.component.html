@@ -1,0 +1,8 @@
+<td *ngIf="Value">
+    <label class="form-label">{{Value.name}}</label>
+</td>
+<td *ngIf="Value">
+    <select [(ngModel)]="Value.value" [disabled]="disabled" class="form-select">
+        <option *ngFor="let i of ['red','blue','green']">{{i}}</option>
+    </select>
+</td>

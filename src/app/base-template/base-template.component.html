@@ -1,0 +1,65 @@
+<ng-template #baseTemplate let-Value>
+  <app-text [value]="Value"></app-text>
+</ng-template>
+
+<ng-template #booleanTemplate let-Value>
+  <app-boolean [value]="Value"></app-boolean>
+</ng-template>
+
+<ng-template #dateTemplate let-Value>
+  <app-date [value]="Value"></app-date>
+</ng-template>
+
+<ng-template #timeTemplate let-Value>
+  <app-time *ngIf="Value" [value]="Value"></app-time>
+</ng-template>
+
+<ng-template #numberTemplate let-Value>
+  <app-number [value]="Value"></app-number>
+</ng-template>
+
+<ng-template #autocompleteTemplate let-Value>
+  <app-autocomplete [value]="Value" [owner]="Value.owner"></app-autocomplete>
+</ng-template>
+
+<ng-template #colorTemplate let-Value>
+    <app-color [value]="Value" [owner]="Value.owner"></app-color>
+</ng-template>
+
+
+<ng-template #objectTemplate let-Value>
+    <div class="accordion" *ngIf="Value.value" style="border:1px solid red;padding:5px;margin:5px;"> 
+      <input type="checkbox" [attr.id]="'accordion'+Value.uid" name="accordion-checkbox" hidden>
+      <label class="accordion-header" [attr.for]="'accordion'+Value.uid">
+        <i class="icon icon-arrow-right mr-1"></i>
+        {{Value.name}}
+      </label>
+      <div class="accordion-body">
+          <ngx-base [value]="Value.value"  [owner]="Value"></ngx-base>
+      </div>
+    </div>
+</ng-template>
+
+<ng-template #baseArray let-Value>
+    <div class="accordion" *ngIf="Value.value.length" style="border:1px solid orange;padding:5px;margin:5px;"> 
+        <input type="checkbox" [attr.id]="'accordion'+Value.uid" name="accordion-checkbox" hidden>
+        <label class="accordion-header" [attr.for]="'accordion'+Value.uid">
+          <i class="icon icon-arrow-right mr-1"></i>
+          {{Value.name}}
+        </label>
+        <div class="accordion-body">
+            <app-array [value]="Value" [owner]="Value.owner"></app-array>
+        </div>
+      </div>    
+</ng-template>
+
+<ng-template #descriptionTemplate let-Value>
+    <app-description [value]="Value" [owner]="Value.owner"></app-description>
+</ng-template>
+
+<ng-template #errorTemplate let-Value>
+    <div *ngIf="Value">
+      Error , {{Value.name}} : {{Value.value}}
+    </div>
+</ng-template>
+

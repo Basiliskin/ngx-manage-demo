@@ -1,0 +1,7 @@
+<td *ngIf="Value">
+    <label class="form-label">{{Value.name}}</label>
+</td>
+<td *ngIf="Value">
+    <input [type]="number" [disabled]="disabled" [(ngModel)]="Value.value"  class="form-input"/>
+</td>
+    
